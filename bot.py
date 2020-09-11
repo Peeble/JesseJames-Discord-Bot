@@ -76,7 +76,7 @@ async def reset(ctx):
 async def setcount(ctx, newcount):
     if (newcount.isdigit()):
         global count
-        count = int(newcount)
+        count = float(newcount)
 
         writeData(count)
 
