@@ -8,7 +8,7 @@ load_dotenv()
 token = os.getenv('DISCORD_TOKEN')
 
 f = open("data.txt", "r")
-count = int(f.read())
+count = float(f.read())
 f.close()
 
 bot = commands.Bot(command_prefix='!')
@@ -37,6 +37,22 @@ async def jessie_james(ctx):
     count += 1
     writeData(count)
     await ctx.send('Jesse James count increased to: ' + str(count))
+
+@bot.command(name='j')
+async def jessie_james(ctx):
+    global count
+
+    count += 0.5
+    writeData(count)
+    await ctx.send('Jesse James count increased to: ' + str(count))
+
+@bot.command(name='unj')
+async def jessie_james(ctx):
+    global count
+
+    count -= 0.5
+    writeData(count)
+    await ctx.send('Jesse James count decreased to: ' + str(count))
 
 @bot.command(name='unjj')
 async def jessie_james(ctx):
@@ -115,13 +131,6 @@ async def facts(ctx):
         + ' time.” The mistress of the house consented, and the supposed girl on horseback said he and the other girls would be there that night. The mistress sent word at once to the Federal officers in Independence that four' \
         + ' new girls would be at her house that night. It was after dark when Jesse James and the other guerrillas rode up to the house, and dismounting, crept up and peered in at the windows. Twelve Federal officers were in there with the women. No guards or sentinels were out. The Federals felt secure. All the company was in one room, five women and twelve men. A cheery fire blazed and crackled on the hearth of the old-fashioned fire place. Jesse James, with five men went to one window. Bill Gregg, with five men, went to another. Each of the nine guerrillas in the darkness outside selected his man. At a signal that had been agreed upon there was the crack of nine revolvers that sounded like the discharge of a single gun. The glass, slivered in a thousand bits, crashed, and nine of the Federal soldiers fell dead at that first volley. The remaining three fell dead an instant later. The guerrillas mounted and rode away.”',
         'He murdered at least 12 people, and claimed to have murdered 17.'
-
-
-
-
-
-
-
     ]
 
     response = random.choice(jj_facts)
