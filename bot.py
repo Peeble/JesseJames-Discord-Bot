@@ -28,6 +28,7 @@ def check_if_allowed(ctx):
 @bot.command(name='count')
 async def jessie_james(ctx):
     await ctx.channel.send('Jesse James count is at: ' + str(count))
+    print('Message Sent: Jesse James count is at: ' + str(count))
 
 
 @bot.command(name='jj')
@@ -37,6 +38,7 @@ async def jessie_james(ctx):
     count += 1
     writeData(count)
     await ctx.send('Jesse James count increased to: ' + str(count))
+    print('Message Sent: Jesse James count increased to: ' + str(count))
 
 @bot.command(name='j')
 async def jessie_james(ctx):
@@ -45,6 +47,7 @@ async def jessie_james(ctx):
     count += 0.5
     writeData(count)
     await ctx.send('Jesse James count increased to: ' + str(count))
+    print('Message Sent: Jesse James count increased to: ' + str(count))
 
 @bot.command(name='unj')
 async def jessie_james(ctx):
@@ -53,6 +56,7 @@ async def jessie_james(ctx):
     count -= 0.5
     writeData(count)
     await ctx.send('Jesse James count decreased to: ' + str(count))
+    print('Message Sent: Jesse James count decreased to: ' + str(count))
 
 @bot.command(name='unjj')
 async def jessie_james(ctx):
@@ -61,6 +65,7 @@ async def jessie_james(ctx):
     count -= 1
     writeData(count)
     await ctx.send('Jesse James count decreased to: ' + str(count))
+    print('Message Sent: Jesse James count decreased to: ' + str(count))
 
 @bot.command(name='reset')
 @commands.check(check_if_allowed)
@@ -70,6 +75,7 @@ async def reset(ctx):
 
     writeData(count)
     await ctx.send('Jesse James count has been reset to 0')
+    print('Message Sent: Jesse James count has been reset to 0')
 
 @bot.command(name='set')
 @commands.check(check_if_allowed)
@@ -81,6 +87,7 @@ async def setcount(ctx, newcount):
         writeData(count)
 
         await ctx.send('Jesse James count has been set to ' + str(count))
+        print('Message Sent: Jesse James count has been set to ' + str(count))
     else:
         await ctx.send('Invalid. Usage is !set <int>')
 
@@ -135,6 +142,7 @@ async def facts(ctx):
 
     response = random.choice(jj_facts)
     await ctx.send(response)
+    print('Fun Fact Sent')
 
 
 bot.run(token)
